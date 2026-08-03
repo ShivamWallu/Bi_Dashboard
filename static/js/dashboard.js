@@ -179,7 +179,27 @@ function createChart(domId, cfg) {
         option = {
             tooltip: {
                 trigger: "axis",
-                valueFormatter: v => formatValue(v, "currency")
+                backgroundColor: "#ffffff",
+                borderColor: "#d1d5db",
+                borderWidth: 1,
+                textStyle: { color: "#111827", fontSize: 13 },
+                extraCssText: "color: #111827 !important;",
+                formatter: function (params) {
+                    if (!params || !params.length) return "";
+                    let html = "<div style='color:#111827;font-size:13px;'>";
+                    html += "<div style='margin-bottom:6px;font-weight:600;color:#111827;'>" + params[0].axisValue + "</div>";
+                    params.forEach(function (p) {
+                        const val = formatValue(p.value, "currency");
+                        // Sales name + value dono black
+                        html += "<div style='color:#111827;'>";
+                        html += p.marker + " ";
+                        html += "<span style='color:#111827;'>" + (p.seriesName || "Sales") + "</span>";
+                        html += ": <b style='color:#111827;'>" + val + "</b>";
+                        html += "</div>";
+                    });
+                    html += "</div>";
+                    return html;
+                }
             },
             legend: { textStyle: { color: labelColor }, top: 0 },
             grid: { left: 65, right: 20, top: 40, bottom: 40 },
@@ -216,7 +236,27 @@ function createChart(domId, cfg) {
         option = {
             tooltip: {
                 trigger: "axis",
-                valueFormatter: v => formatValue(v, "currency")
+                backgroundColor: "#ffffff",
+                borderColor: "#d1d5db",
+                borderWidth: 1,
+                textStyle: { color: "#111827", fontSize: 13 },
+                extraCssText: "color: #111827 !important;",
+                formatter: function (params) {
+                    if (!params || !params.length) return "";
+                    let html = "<div style='color:#111827;font-size:13px;'>";
+                    html += "<div style='margin-bottom:6px;font-weight:600;color:#111827;'>" + params[0].axisValue + "</div>";
+                    params.forEach(function (p) {
+                        const val = formatValue(p.value, "currency");
+                        // Sales name + value dono black
+                        html += "<div style='color:#111827;'>";
+                        html += p.marker + " ";
+                        html += "<span style='color:#111827;'>" + (p.seriesName || "Sales") + "</span>";
+                        html += ": <b style='color:#111827;'>" + val + "</b>";
+                        html += "</div>";
+                    });
+                    html += "</div>";
+                    return html;
+                }
             },
             grid: { left: 65, right: 16, top: 24, bottom: 90 },
             xAxis: {
@@ -266,7 +306,10 @@ function createChart(domId, cfg) {
                 formatter: (p) => {
                     const val = formatValue(p.value, "currency");
                     return `${p.name}<br/>${val} (${p.percent}%)`;
-                }
+                },
+                backgroundColor: "#ffffff",
+                borderColor: "#e5e7eb",
+                textStyle: { color: "#111827" }
             },
             legend: {
                 type: "scroll",
