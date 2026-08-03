@@ -1,0 +1,384 @@
+/* =====================================================
+   AI BI Dashboard – Professional Power BI Style Theme
+   ===================================================== */
+
+:root {
+    --bg-body: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-primary: #1f2937;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #3b82f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #06b6d4;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .06);
+    --radius: 12px;
+}
+
+[data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+body {
+    background: var(--bg-body);
+    color: var(--text-primary);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    transition: background .25s, color .25s;
+    min-height: 100vh;
+}
+
+.landing-body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+.landing-body .text-muted {
+    color: #94a3b8 !important;
+}
+
+.landing-body .card {
+    background: rgba(30, 41, 59, .9);
+    color: #e2e8f0;
+}
+
+/* Upload Drop Zone */
+.drop-zone {
+    border: 2px dashed #3b82f6;
+    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    background: rgba(59, 130, 246, .05);
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, .08);
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, .05);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: background .25s;
+}
+
+.filter-card {
+    background: var(--bg-card);
+}
+
+/* KPI Cards */
+.kpi-card {
+    border: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.kpi-card .kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.kpi-card .kpi-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.kpi-card .kpi-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.bg-primary-soft {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.bg-success-soft {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.bg-warning-soft {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.bg-info-soft {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.bg-danger-soft {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.bg-secondary-soft {
+    background: linear-gradient(135deg, #64748b, #475569);
+}
+
+/* Chart containers */
+.chart-card {
+    height: 400px;
+}
+
+.chart-card .card-body {
+    height: calc(100% - 48px);
+    padding: 0.25rem 0.75rem 0.75rem;
+}
+
+.chart-container {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+/* Insights */
+.insight-item,
+.rec-item {
+    border-left: 3px solid var(--primary);
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.6rem;
+    background: rgba(59, 130, 246, .06);
+    border-radius: 0 8px 8px 0;
+}
+
+.rec-item.priority-high {
+    border-left-color: var(--danger);
+    background: rgba(239, 68, 68, .08);
+}
+
+.rec-item.priority-medium {
+    border-left-color: var(--warning);
+    background: rgba(245, 158, 11, .08);
+}
+
+.rec-item.priority-low {
+    border-left-color: var(--success);
+    background: rgba(16, 185, 129, .06);
+}
+
+.insight-item h6,
+.rec-item h6 {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.insight-item p,
+.rec-item p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
+}
+
+/* Table */
+#dataTable th {
+    white-space: nowrap;
+    font-size: 0.78rem;
+}
+
+#dataTable td {
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+/* Dark mode table overrides */
+[data-theme="dark"] .table {
+    --bs-table-bg: var(--bg-card);
+    --bs-table-striped-bg: #273549;
+    --bs-table-hover-bg: #2d3a4f;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .table-dark {
+    --bs-table-bg: #0f172a;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background: #334155;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .kpi-card .kpi-value {
+        font-size: 1.2rem;
+    }
+
+    .chart-card {
+        height: 340px;
+    }
+}
+
+/* Print / PDF */
+@media print {
+
+    .navbar,
+    .filter-card,
+    footer,
+    #themeToggle,
+    .btn {
+        display: none !important;
+    }
+
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+
+
+/* =====================================================
+   Dark mode – force light text everywhere
+   ===================================================== */
+[data-theme="dark"] body,
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .kpi-value,
+[data-theme="dark"] .kpi-title,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] label,
+[data-theme="dark"] .fw-bold,
+[data-theme="dark"] .fw-semibold,
+[data-theme="dark"] .insight-item h6,
+[data-theme="dark"] .rec-item h6,
+[data-theme="dark"] .insight-item p,
+[data-theme="dark"] .rec-item p {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .card-header {
+    color: #f1f5f9 !important;
+    border-color: var(--border) !important;
+}
+
+[data-theme="dark"] .insight-item,
+[data-theme="dark"] .rec-item {
+    background: rgba(59, 130, 246, 0.12);
+}
+
+[data-theme="dark"] .rec-item.priority-high {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+[data-theme="dark"] .rec-item.priority-medium {
+    background: rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .rec-item.priority-low {
+    background: rgba(16, 185, 129, 0.12);
+}
+
+/* DataTables dark */
+[data-theme="dark"] .dataTables_wrapper,
+[data-theme="dark"] .dataTables_info,
+[data-theme="dark"] .dataTables_length,
+[data-theme="dark"] .dataTables_filter,
+[data-theme="dark"] .dataTables_paginate {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .dataTables_wrapper .page-link {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .dataTables_wrapper .page-item.active .page-link {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+[data-theme="dark"] .dataTables_wrapper .page-item.disabled .page-link {
+    background: #1e293b;
+    color: #64748b;
+}
+
+[data-theme="dark"] table.dataTable tbody tr {
+    background: transparent;
+}
+
+[data-theme="dark"] #dataTable td,
+[data-theme="dark"] #dataTable th {
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+}
+
+/* Badges */
+[data-theme="dark"] .badge.bg-secondary {
+    background: #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .badge.bg-info {
+    color: #0f172a !important;
+}
+
+/* Footer */
+[data-theme="dark"] footer {
+    color: #94a3b8 !important;
+    border-color: #334155 !important;
+}
+
+/* Filter row */
+[data-theme="dark"] .filter-card .text-muted {
+    color: #94a3b8 !important;
+}
